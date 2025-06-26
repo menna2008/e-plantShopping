@@ -296,7 +296,9 @@ function ProductList({ onHomeClick }) {
                                         <img src={item.image} alt={item.name}/>
                                         <div>{item.cost}</div>
                                         <div>{item.description}</div>
-                                        <button onClick={() => handleAddToCart(plant)}>Add to Cart</button>
+                                        <button onClick={() => handleAddToCart(item)} disabled={addedToCart[item.name]}>
+                                            {!addedToCart[item.name] ?  "Add to Cart" : "Added to Cart"}
+                                        </button>
                                     </div>
                                 ))}
                             </div>
