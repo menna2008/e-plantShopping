@@ -236,6 +236,7 @@ function ProductList({ onHomeClick }) {
 
     const [addedToCart, setAddedToCart] = useState({})
     const dispatch = useDispatch()
+    const cart = useSelector(state => state.cart.items);
 
     const handleHomeClick = (e) => {
         e.preventDefault();
