@@ -5,7 +5,6 @@ import CartItem from './CartItem';
 import { addItem, removeItem, updateQuantity } from './CartSlice'
 function ProductList({ onHomeClick }) {
     const [showCart, setShowCart] = useState(false);
-    const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
 
     const plantsArray = [
         {
@@ -220,7 +219,7 @@ function ProductList({ onHomeClick }) {
         padding: '15px',
         display: 'flex',
         justifyContent: 'space-between',
-        alignIems: 'center',
+        alignItems: 'center',
         fontSize: '20px',
     }
     const styleObjUl = {
@@ -249,7 +248,6 @@ function ProductList({ onHomeClick }) {
     };
     const handlePlantsClick = (e) => {
         e.preventDefault();
-        setShowPlants(true); // Set showAboutUs to true when "About Us" link is clicked
         setShowCart(false); // Hide the cart when navigating to About Us
     };
 
@@ -286,8 +284,8 @@ function ProductList({ onHomeClick }) {
             </div>
             {!showCart ? (
                 <div className="product-grid">
-                    {plantsArray.map((category, index) => (
-                        <div key={index}>
+                    {plantsArray.map((category, list) => (
+                        <div key={list}>
                             <h1>{category.category}</h1>
                             <div>
                                 {category.plants.map((item, index) => (
